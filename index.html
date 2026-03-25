@@ -13,38 +13,86 @@
             margin-left: 400px;
             margin-right: 400px;
             text-align: center  ;
+            background-color: #435169;
         }
+
+        footer{
+            display: block;
+            text-align: center;
+            padding: 3px;
+            background-color: rgb(0, 0, 0, 0.5);
+             height: 35px;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            position: fixed;
+        }
+
+        body{
+            background-color: #7aadff;
+        }
+        
     </style>
 </head>
 <body>
     <div class="col mt-3" id="loginthing">
-        <h2>Login</h2>
+        <h2  style="color: white;"   >Login</h2>
 
         <br>
 
-        <label for="user">Username</label>
-        <input type="text" id="username" onclick="loginnow()" class="form-control">
+        <details  style="color: white;" ontoggle="instructing()">
+            <summary><u></u></summary>
+            <i id="plshelp"></i>
+        </details>
 
         <br>
 
-        <label  for="pass">Password</label>
-        <input type="number" id="passwording" onclick="loginnow()" class="form-control">
+        <label for="user" style="color: white;">Username</label>
+        <input type="text" id="username" class="form-control" style="border-radius: 20px;">
 
         <br>
 
-        <label for="stayright">Stay logged in</label>
-        <input class="form-check-input" onclick="loginnow()" type="checkbox" id="wannastay" value="stay" name="staying">
+        <label  for="pass" style="color: white;">Password</label>
+        <input type="text" id="passwording" class="form-control" style="border-radius: 20px;">
 
-        <Br>
+        <br>
+
+        <label for="stayright" style="color: white;">Stay logged in</label>
+        <input class="form-check-input" type="checkbox" id="wannastay" value="stay" name="staying">
+
+        <br><br>
 
         <button class="btn btn-primary" onclick="loginnow()" >Login</button>
-        <button class="btn" onclick="loginnow()" style="background-color: white;">Cancel</button>
+        <button class="btn" style="background-color: white;">Cancel</button>
+
+        <br><br>
 
     </div>
 
     <script>
         function loginnow(){
+            var username = document.getElementById("username").value; // sets whatever the user input is as a variabl
+            var password = document.getElementById("passwording").value;
+            let correctname = "jarvisjoven6741";
+            let correctpassword = "6741sixseven$";
 
+            if(username === correctname && password === correctpassword){
+                alert("Welcome jarvisjoven6741!");
+            } // checks if the username and password correspond to the correct one
+            else{
+                alert("The username/password is incorrect.");
+            } // if not, then alerts that the login details are wrong
         }
+
+        function instructing(){
+            document.getElementById('plshelp').innerHTML = "Input the correct name and password to login. Password must have atleast 8 characters and 1 special character. Username must be minimum 8 characters, with a maximum of 16."
+        }
+    
+        </script>
+        
+        <footer>
+            <p>Jarivs Joven, 9-Emerald</p>
+        </footer>
 </body>
 </html>
