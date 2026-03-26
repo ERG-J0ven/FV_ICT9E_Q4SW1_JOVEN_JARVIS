@@ -59,7 +59,7 @@
         <br>
 
         <label for="stayright" style="color: white;">Stay logged in</label>
-        <input class="form-check-input" type="checkbox" id="wannastay" value="stay" name="staying">
+        <input class="form-check-input" type="checkbox" id="wannastay" value="stay" name="staying" ontoggle="checkingthebox()">
 
         <br><br>
 
@@ -87,6 +87,17 @@
 
         function instructing(){
             document.getElementById('plshelp').innerHTML = "Input the correct name and password to login. Password must have atleast 8 characters and 1 special character. Username must be minimum 8 characters, with a maximum of 16."
+        }
+
+        function checkingthebox(){
+            let checkbox = document.getElementById("wannastay").checked;
+            let message = ""
+            switch(checkbox){
+                case true: document.getElementById("Your session will stay active on this device").innerHTML = message
+                break;
+                case false: document.getElementById("").innerHTML = message
+                break;
+            }
         }
     
         </script>
